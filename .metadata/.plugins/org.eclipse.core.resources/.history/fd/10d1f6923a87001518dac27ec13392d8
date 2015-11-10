@@ -1,0 +1,43 @@
+package comercio.paravenda;
+
+import java.util.Map;
+
+import tributacao.Tributavel;
+
+public class ItemDeVenda implements Tributavel {
+	
+	//IMPLEMENTAR
+	
+	private int quantidate;
+	private ProdutoServico ps;
+	private double desconto;
+	private Map<String,String> map;
+	
+	public ItemDeVenda(int quant, String psNome, double desconto, 
+			Map<String,String> map){
+		
+	}
+	
+	public String getCategoriaTributaria(){
+		return "";
+	}
+
+	@Override
+	public int getQuantidade() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getPreco() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String categoriaTributaria() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

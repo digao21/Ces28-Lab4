@@ -1,0 +1,14 @@
+package tributacao;
+
+import java.util.List;
+
+public abstract class Imposto {
+	private String nome;
+	
+	public String getNome(){
+		return nome;
+	}
+	
+	public abstract double calcularImposto(List<Tributavel> trib);
+	
+}

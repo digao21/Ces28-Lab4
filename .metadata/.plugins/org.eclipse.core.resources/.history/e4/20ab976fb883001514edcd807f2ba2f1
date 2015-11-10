@@ -1,0 +1,12 @@
+package comercio.paravenda;
+
+import java.util.Map;
+
+public interface Produto_Servico {
+
+	public String getNome();
+	public double getPrecoPorHora();
+	public double getPrecoPorUnidade();
+	public String getInformacoes(String tipoInformacao);	
+	
+}

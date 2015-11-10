@@ -1,0 +1,34 @@
+package comercio.paravenda;
+
+import java.util.Map;
+
+public class Servico implements Produto_Servico {
+
+	private String nome;
+	private double precoPorHora;
+	private String setorResponsavel;
+	private String natureza;
+	private String categoriaTributaria;//POSSIVELMENTE VAI MUDAR
+	
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public double getPrecoPorHora() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public double getPrecoPorUnidade() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public Map<String, String> getInformacoes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

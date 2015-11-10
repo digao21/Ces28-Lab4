@@ -1,0 +1,19 @@
+package comercio.paravenda;
+
+import java.util.Map;
+
+public abstract class ProdutoServico {
+
+	private String nome;
+	protected Map<String,String> informacoes;
+	
+	public ProdutoServico(){
+		
+	}
+	
+	//public String getNome();
+	//public double getPrecoPorHora();
+	//public double getPrecoPorUnidade();
+	//public String getInformacao(String tipoInformacao);	
+	
+}

@@ -1,0 +1,27 @@
+package bancodedados;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import comercio.paravenda.Produto_Servico;
+
+public class BancoDeDados {
+	
+	private static BancoDeDados db = new BancoDeDados();
+		
+	private Map<String,Produto_Servico> ps;
+	
+	private static BancoDeDados getBancoDeDados(){
+		return db;		
+	}
+	
+	private BancoDeDados(){
+		ps = new HashMap<>();
+		initProdutoServico();
+	}
+	
+	private void initProdutoServico(){
+		
+	}
+	
+}

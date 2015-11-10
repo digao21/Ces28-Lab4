@@ -1,0 +1,35 @@
+package comercio;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+public class NotaFiscal {
+
+	private NFEstado estado;
+	private long id;
+	private double valor;
+	private Map<String,Long> impostos;
+	private String condicoesEntrega;
+	private Date dataDeEntrega;
+	private DadosCliente dadosCliente;
+	private String dadosSubmissao;
+	
+	NotaFiscal(){
+		impostos = new HashMap<>();		
+	}
+	
+	public void setNFEstado(NFEstado estado){
+		this.estado = estado;
+	}	
+	public void setId(int id){
+		this.id = id;
+	}	
+	void setValor(double valor){
+		this.valor = valor;
+	}
+	public void setImposto(String imposto, long valor){
+		impostos.put(imposto, valor);
+	}
+	
+}

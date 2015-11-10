@@ -1,0 +1,13 @@
+package comercio.notafiscal;
+
+public class NFBuilder {
+
+	NotaFiscal nf;
+	int totalIV;
+	
+	public NFBuilder(){
+		nf = new NotaFiscal();
+		totalIV = 0;
+	}
+	
+}

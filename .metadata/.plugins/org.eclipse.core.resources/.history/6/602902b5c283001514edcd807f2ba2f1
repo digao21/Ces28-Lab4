@@ -1,0 +1,13 @@
+package bancodedados.hd;
+
+import comercio.paravenda.ProdutoServicoComposto;
+
+public class ProdutoServicoMockBuilder {
+
+	private ProdutoServicoComposto ps;
+	
+	public ProdutoServicoMockBuilder(){
+		ps = new ProdutoServicoComposto();
+	}
+	
+}

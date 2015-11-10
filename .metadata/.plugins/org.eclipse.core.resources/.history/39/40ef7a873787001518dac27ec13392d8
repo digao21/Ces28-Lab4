@@ -1,0 +1,38 @@
+package comercio.paravenda;
+
+import java.util.Date;
+
+import tributacao.Tributavel;
+
+public class ItemDeVenda implements Tributavel {
+	
+	//IMPLEMENTAR
+	
+	private int quantidate;
+	private double desconto;
+	private String condicoes;
+	private Date dataDeEntrega;	
+	
+	public String getCategoriaTributaria(){
+		return "";
+	}
+
+	@Override
+	public int getQuantidade() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getPreco() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String categoriaTributaria() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

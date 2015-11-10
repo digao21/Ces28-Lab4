@@ -1,0 +1,24 @@
+package comercio.paravenda;
+
+public class ProdutoServicoNull extends ProdutoServico {
+
+	public ProdutoServicoNull(){
+		super("",null);
+	}	
+
+	@Override
+	public double getPrecoPorHora() {
+		return 0;
+	}
+
+	@Override
+	public double getPrecoPorUnidade() {
+		return 0;
+	}
+
+	@Override
+	public String getInformacao(String tipoInformacao) {
+		return "Nao possuo tal informacao";
+	}
+	
+}

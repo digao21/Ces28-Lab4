@@ -1,0 +1,46 @@
+package comercio.paravenda;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Servico implements Produto_Servico {
+
+	private String nome;
+	private double precoPorHora;
+	private Map<String,String> informacoes;
+	
+	public Servico(String nome, double precoPorHora){
+		this.nome = nome;
+		this.precoPorHora = precoPorHora;
+		informacoes = new HashMap<>();
+	}
+	
+	@Override
+	public String getNome() {
+		return nome;
+	}
+	@Override
+	public double getPrecoPorHora() {
+		return precoPorHora;
+	}
+	@Override
+	public double getPrecoPorUnidade() {
+		return 0;
+	}
+	@Override
+	public String getInformacao(String tipoInformacao) {
+String inf;
+		
+		inf = informacoes.get(tipoInformacao);
+		
+		if(inf == null)
+			inf = "Nao possuo tal informacao";
+			
+		return inf;
+	}
+	
+	public void setInformacao(String tipoInformacao, String informacao){
+		informacoes.put(tipoInformacao, informacao);
+	}
+	
+}

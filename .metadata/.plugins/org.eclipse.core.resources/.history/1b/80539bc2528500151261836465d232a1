@@ -1,0 +1,30 @@
+package bancodedados.hd;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import comercio.paravenda.ProdutoServico;
+import comercio.paravenda.ProdutoServicoComposto;
+
+public class ProdutoServicoMockBuilder {
+
+	private String nome;
+	private Map<String,String> mp = new HashMap<>();
+	private ProdutoServicoComposto psc;
+	
+	public ProdutoServicoMockBuilder adicionarNome(String nome){
+		this.nome = nome;
+		return this;
+	}
+	
+	public ProdutoServicoMockBuilder adicionarProdutoServico(ProdutoServico ps){
+		psc.adicionarProdutoServico(ps);;
+		return this;
+	}
+	
+	public ProdutoServicoMockBuilder adicionarInformacao(String nome){
+		psc.setNome(nome);
+		return this;
+	}
+	
+}

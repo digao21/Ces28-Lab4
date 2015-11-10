@@ -1,0 +1,29 @@
+package comercio.paravenda;
+
+public class ProdutoServicoNull extends ProdutoServico {
+
+	public ProdutoServicoNull(){
+		setNome("");
+	}	
+
+	@Override
+	public double getPrecoPorHora() {
+		return 0;
+	}
+
+	@Override
+	public double getPrecoPorUnidade() {
+		return 0;
+	}
+
+	@Override
+	public String getInformacao(String tipoInformacao) {
+		return "Nao possuo tal informacao";
+	}
+
+	@Override
+	public void setInformacao(String tipoInformacao, String informacao){
+		throw new RuntimeException("NullObject nao pode receber informacao");
+	}
+	
+}

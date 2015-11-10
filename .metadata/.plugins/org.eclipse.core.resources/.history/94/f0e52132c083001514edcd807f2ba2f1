@@ -1,0 +1,36 @@
+package bancodedados;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import comercio.paravenda.Produto_Servico;
+
+public class BancoDeDados {
+	
+	private static BancoDeDados db = new BancoDeDados();
+		
+	private Map<String,Produto_Servico> ps;
+	
+	private static BancoDeDados getBancoDeDados(){
+		return db;		
+	}
+	
+	private BancoDeDados(){
+		ps = new HashMap<>();
+		initProdutoServico();
+	}
+	
+	public Produto_Servico getProdutoServico(String psNome){
+		Produto_Servico psAnsw = ps.get(psNome);
+		
+		if(psAnsw == null)			
+			throw new RuntimeException("ProdutoServico nao encontrado");
+		
+		return psAnsw;
+	}
+	
+	private void initProdutoServico(){
+		
+	}
+	
+}

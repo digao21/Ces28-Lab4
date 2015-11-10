@@ -1,0 +1,50 @@
+package comercio.notafiscal;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import comercio.paravenda.ItemDeVenda;
+
+public class NotaFiscal {
+
+	private NFEstado estado;
+	private long id;
+	private double valor;
+	private List<ItemDeVenda> itensDeVenda;
+	private Map<String,Long> impostos;
+	private String condicoesEntrega;
+	private Date dataDeEntrega;
+	private DadosCliente dadosCliente;
+	private String dadosSubmissao;
+	
+	NotaFiscal(){
+		estado = NFEstado.emElaboracao;
+		valor = 0;
+		itensDeVenda = new ArrayList<>();
+		impostos = new HashMap<>();				
+	}
+	
+	public void setEstadoValidada(){
+		estado = NFEstado.validada;
+	}
+	
+	void adicionarItemDeVenda(ItemDeVenda item){
+		itensDeVenda.add(item);
+	}
+	
+	public void dicionarImposto(String imposto, long valor){
+		testarImutabilidade();
+		
+		
+		
+	}
+	
+	
+	private void testarImutabilidade(){
+		if(estado.equals(NFEstado.validada))
+			throw new RuntimeException("Impossivel mudar NF validada");
+	}
+}

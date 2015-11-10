@@ -1,0 +1,17 @@
+package bancodedados.hd;
+
+import bancodedados.BancoDeDados;
+
+public class HDPS {
+
+	private BancoDeDados bd;
+	
+	public HDPS(){
+		bd = BancoDeDados.getBancoDeDados();
+	}
+	
+	public void readServicoPintarParede(){
+		
+	}
+	
+}

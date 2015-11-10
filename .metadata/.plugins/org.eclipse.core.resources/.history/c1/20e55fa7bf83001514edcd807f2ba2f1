@@ -1,0 +1,45 @@
+package comercio.paravenda;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProdutoEServicoComposto extends ProdutoServico {
+
+	private List<ProdutoServico> subProdutosEServicos;	
+	
+	public ProdutoEServicoComposto(String nome, ProdutoServico lSon, ProdutoServico rSon){
+		super(nome);
+		subProdutosEservicos = new ArrayList<>();
+	}	
+
+	@Override
+	public double getPrecoPorHora() {
+		double answ = 0;
+		
+		for(ProdutoServico ps : subProdutosEServicos)
+			answ += ps.getPrecoPorHora();
+		
+		return answ;
+	}
+
+	@Override
+	public double getPrecoPorUnidade() {		
+		return lSon.getPrecoPorUnidade() + rSon.getPrecoPorUnidade();
+	}
+
+	@Override
+	public String getInformacao(String tipoInformacao) {
+		String inf;
+		
+		inf = informacoes.get(tipoInformacao);
+		
+		if(inf == null)
+			inf = lSon.getInformacao(tipoInformacao);
+		
+		if(inf.equals(NULLSTRING))
+			inf = rSon.getInformacao(tipoInformacao);
+		
+		return inf;
+	}
+
+}

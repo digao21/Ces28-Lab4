@@ -1,0 +1,44 @@
+package comercio.paravenda;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public abstract class ProdutoServico {
+	
+	public static final String NULLSTRING = "Nao possuo tal informacao";
+	
+	protected String nome;
+	protected Map<String,String> informacoes;	
+	
+	public ProdutoServico(){		
+		informacoes = new HashMap<>();
+	}
+	
+	public void setNome(String nome){
+		this.nome = nome;
+	}
+	
+	public String getNome(){
+		return nome;
+	}
+	
+	public String getInformacao(String tipoInformacao){		
+		String inf;
+		
+		inf = informacoes.get(tipoInformacao);
+		
+		if(inf == null)
+			inf = NULLSTRING;
+			
+		return inf;
+	}
+	
+	public void setInformacao(String tipoInformacao, String informacao){
+		informacoes.put(tipoInformacao, informacao);
+	}
+	
+	public abstract double getPrecoPorHora();
+	public abstract double getPrecoPorUnidade();
+		
+	
+}

@@ -1,0 +1,24 @@
+package bancodedados.hd;
+
+import comercio.paravenda.ProdutoServico;
+import comercio.paravenda.ProdutoServicoComposto;
+
+public class ProdutoServicoMockBuilder {
+
+	private ProdutoServicoComposto psc;
+	
+	public ProdutoServicoMockBuilder(){
+		psc = new ProdutoServicoComposto();
+	}
+	
+	public ProdutoServicoMockBuilder adicionarNome(String nome){
+		psc.setNome(nome);
+		return this;
+	}
+	
+	public ProdutoServicoMockBuilder adicionarProdutoServico(ProdutoServico ps){
+		psc.adicionarProdutoServico(ps);;
+		return this;
+	}
+	
+}

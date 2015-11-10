@@ -1,0 +1,11 @@
+package comercio.paravenda;
+
+public class Servico {
+
+	private String nome;
+	private double precoPorHora;
+	private String setorResponsavel;
+	private String natureza;
+	private String categoriaTributaria;//POSSIVELMENTE VAI MUDAR
+	
+}

@@ -1,0 +1,14 @@
+package bancodedados.hd;
+
+public class HD {
+
+	private static HD hd = null;
+	
+	public static HD getHD(){
+		if(hd == null)
+			hd = new HD();
+		
+		return hd;
+	}
+	
+}

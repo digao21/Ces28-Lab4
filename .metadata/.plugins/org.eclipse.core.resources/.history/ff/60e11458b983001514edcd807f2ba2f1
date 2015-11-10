@@ -1,0 +1,43 @@
+package comercio.paravenda;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Produto implements Produto_Servico {
+
+	private String nome;
+	private double precoPorUnidade;
+	Map<String,String> informacoes;
+	
+	public Produto(String nome, double precoPorUnidade){
+		this.nome = nome;
+		this. precoPorUnidade = precoPorUnidade;
+		informacoes = new HashMap<>();
+	}
+	
+	@Override
+	public String getNome() { 
+		return nome;
+	}
+	@Override
+	public double getPrecoPorHora() {
+		return 0;
+	}
+	@Override
+	public double getPrecoPorUnidade() {
+		return precoPorUnidade;
+	}
+	@Override
+	public String getInformacao(String tipoInformacao) {
+		// TODO Auto-generated method stub
+		String inf;
+		
+		inf = informacoes.get(tipoInformacao);
+		
+		if(inf == null)
+			inf = "Nao possuo tal informacao";
+			
+		return null;
+	}
+	
+}

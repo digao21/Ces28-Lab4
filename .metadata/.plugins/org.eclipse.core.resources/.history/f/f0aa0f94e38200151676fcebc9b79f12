@@ -1,0 +1,103 @@
+package comercio.notafiscal;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import comercio.Cliente;
+import comercio.paravenda.ItemDeVenda;
+
+public class NotaFiscal {
+
+	private NFEstado estado;
+	private long id;
+	private double valor;
+	private List<ItemDeVenda> itensDeVenda;
+	private Map<String,Long> impostos;
+	private String condicoesEntrega;
+	private Date dataDeEntrega;
+	private DadosCliente dadosCliente;
+	private String dadosSubmissao;
+	
+	NotaFiscal(){
+		estado = NFEstado.emElaboracao;
+		valor = 0;
+		itensDeVenda = new ArrayList<>();
+		impostos = new HashMap<>();				
+	}
+	
+	public void setEstadoValidada(){
+		estado = NFEstado.validada;
+	}
+	void adicionarItemDeVenda(ItemDeVenda item){
+		valor += item.getValor();
+		itensDeVenda.add(item);
+	}	
+	public void adicionarImposto(String imposto, long valor){
+		testarImutabilidade();		
+		impostos.put(imposto, valor);		
+	}	
+	void setCondicoesDeEntrega(String condicoes){
+		condicoesEntrega = condicoes;
+	}	
+	void setDataDeEntrega(Date data){
+		dataDeEntrega = data;
+	}	
+	void setCliente(Cliente cliente){
+		dadosCliente = new DadosCliente(cliente);
+	}
+	void setDadosSubmissao(String dados){
+		dadosSubmissao = dados;
+	}
+	
+	
+	
+	
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public NFEstado getEstado() {
+		return estado;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public List<ItemDeVenda> getItensDeVenda() {
+		return itensDeVenda;
+	}
+
+	public Map<String, Long> getImpostos() {
+		return impostos;
+	}
+
+	public String getCondicoesEntrega() {
+		return condicoesEntrega;
+	}
+
+	public Date getDataDeEntrega() {
+		return dataDeEntrega;
+	}
+
+	public DadosCliente getDadosCliente() {
+		return dadosCliente;
+	}
+
+	public String getDadosSubmissao() {
+		return dadosSubmissao;
+	}
+
+	private void testarImutabilidade(){
+		if(estado.equals(NFEstado.validada))
+			throw new RuntimeException("Impossivel mudar NF validada");
+	}
+}

@@ -1,0 +1,31 @@
+package comercio;
+
+import java.util.Date;
+import java.util.Map;
+
+public class NotaFiscal {
+
+	private NFEstado estado;
+	private long id;
+	private double valor;
+	private Map<String,Long> impostos;
+	private String condicoesEntrega;
+	private Date dataDeEntrega;
+	private DadosCliente dadosCliente;
+	private String dadosSubmissao;
+	
+	NotaFiscal(){}
+	
+	public void setNFEstado(NFEstado estado){
+		this.estado = estado;
+	}
+	
+	public void setId(int id){
+		this.id = id;
+	}
+	
+	void setValor(double valor){
+		this.valor = valor;
+	}
+	
+}

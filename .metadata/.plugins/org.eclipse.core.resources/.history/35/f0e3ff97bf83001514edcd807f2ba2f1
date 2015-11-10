@@ -1,0 +1,41 @@
+package comercio.paravenda;
+
+
+public class ProdutoEServicoComposto extends ProdutoServico {
+
+	private List<ProdutoServico> subProdutosEservicos;
+	private ProdutoServico lSon;
+	private ProdutoServico rSon;
+	
+	public ProdutoEServicoComposto(String nome, ProdutoServico lSon, ProdutoServico rSon){
+		super(nome);
+		this.lSon = lSon;
+		this.rSon = rSon;
+	}	
+
+	@Override
+	public double getPrecoPorHora() {
+		return lSon.getPrecoPorHora() + rSon.getPrecoPorHora();
+	}
+
+	@Override
+	public double getPrecoPorUnidade() {		
+		return lSon.getPrecoPorUnidade() + rSon.getPrecoPorUnidade();
+	}
+
+	@Override
+	public String getInformacao(String tipoInformacao) {
+		String inf;
+		
+		inf = informacoes.get(tipoInformacao);
+		
+		if(inf == null)
+			inf = lSon.getInformacao(tipoInformacao);
+		
+		if(inf.equals(NULLSTRING))
+			inf = rSon.getInformacao(tipoInformacao);
+		
+		return inf;
+	}
+
+}

@@ -1,0 +1,23 @@
+package comercio.paravenda;
+
+import java.util.Date;
+
+public class ItemDeVenda {
+	
+	//IMPLEMENTAR
+	
+	private int quantidate;
+	private double desconto;
+	private String condicoes;
+	private Date dataDeEntrega;
+	
+	//NOT IMPLEMENTED
+	public double getValor(){
+		return 1;
+	}
+	
+	public String getCategoriaTributaria(){
+		return "";
+	}
+	
+}

@@ -1,0 +1,21 @@
+package comercio.paravenda;
+
+public class Servico extends ProdutoServico {
+	
+	private double precoPorHora;	
+	
+	public Servico(String nome, double precoPorHora){
+		super(nome);
+		this.precoPorHora = precoPorHora;		
+	}
+		
+	@Override
+	public double getPrecoPorHora() {
+		return precoPorHora;
+	}
+	@Override
+	public double getPrecoPorUnidade() {
+		return 0;
+	}	
+	
+}

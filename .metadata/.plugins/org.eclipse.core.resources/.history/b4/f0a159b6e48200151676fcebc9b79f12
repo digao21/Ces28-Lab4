@@ -1,0 +1,27 @@
+package comercio.notafiscal;
+
+import comercio.paravenda.ItemDeVenda;
+
+public class NFBuilder {
+
+	NotaFiscal nf;
+	int totalIV;
+	
+	public NFBuilder(){
+		nf = new NotaFiscal();
+		totalIV = 0;
+	}
+	
+	public NFBuilder adicionarItemDeVenda(ItemDeVenda item){		
+		totalIV++;
+		nf.adicionarItemDeVenda(item);
+		return this;
+	}
+	
+	public NFBuilder setCondicoesDeEntrega(String condicoes){
+		
+		
+		return this;
+	}
+	
+}

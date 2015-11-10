@@ -1,0 +1,8 @@
+package comercio;
+
+public enum NFEstado {
+
+	emElaboracao,
+	validada;
+	
+}

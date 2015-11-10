@@ -1,0 +1,27 @@
+package bancodedados.hd;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import bancodedados.BancoDeDados;
+import comercio.paravenda.Servico;
+
+public class HDPS {
+
+	private BancoDeDados bd;
+	
+	public HDPS(){
+		bd = BancoDeDados.getBancoDeDados();
+	}
+	
+	public void readServicoPintarParede(){
+		String nome = "Servico Pintar Parede";
+		double precoPorHora = 50;
+		Map<String,String> mpI = new HashMap<>();
+		//ADICIONAR INFORMACOES
+		
+		Servico serv = new Servico(nome,mpI,precoPorHora);
+		
+	}
+	
+}

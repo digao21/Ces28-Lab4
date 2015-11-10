@@ -1,0 +1,39 @@
+package comercio.paravenda;
+
+import java.util.Map;
+
+public class ProdutoEServicoComposto implements Produto_Servico {
+
+	private String nome;
+	private Map<String,String> informacoes;
+	private Produto_Servico lSon;
+	private Produto_Servico rSon;
+	
+	public ProdutoEServicoComposto(String nome, Produto_Servico lSon, Produto_Servico rSon){
+		this.nome = nome;
+		this.lSon = lSon;
+		this.rSon = rSon;
+	}
+	
+	@Override
+	public String getNome() {		
+		return nome;
+	}
+
+	@Override
+	public double getPrecoPorHora() {
+		return lSon.getPrecoPorHora() + rSon.getPrecoPorHora();
+	}
+
+	@Override
+	public double getPrecoPorUnidade() {		
+		return lSon.getPrecoPorUnidade() + rSon.getPrecoPorUnidade();
+	}
+
+	@Override
+	public String getInformacao(String tipoInformacao) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

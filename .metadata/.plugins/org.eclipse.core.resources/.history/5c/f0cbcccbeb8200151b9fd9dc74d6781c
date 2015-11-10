@@ -1,0 +1,13 @@
+package bancodedados;
+
+public class BancoDeDados {
+	
+	private static BancoDeDados db = new BancoDeDados();
+	
+	
+	
+	private BancoDeDados(){
+		
+	}
+	
+}

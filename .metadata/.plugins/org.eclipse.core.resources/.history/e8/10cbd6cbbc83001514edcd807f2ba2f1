@@ -1,0 +1,28 @@
+package comercio.paravenda;
+
+public class ProdutoServicoNull implements Produto_Servico {
+
+	@Override
+	public String getNome() {		
+		return "";
+	}
+
+	@Override
+	public double getPrecoPorHora() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getPrecoPorUnidade() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getInformacao(String tipoInformacao) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

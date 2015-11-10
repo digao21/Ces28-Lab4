@@ -1,0 +1,10 @@
+package util;
+
+public abstract class Const {
+	
+	public static final String PS_SHOW_DE_ROCK = "PS Show De Rock";
+	public static final String S_CONTRATAR_BANDA = "S Contratar Banda";
+	public static final String P_ALUGAR_INSTRUMENTO = "P Alugar Instrumentos";
+	public static final String P_ALUGAR_ESTRUTURA = "S Contratar Banda";
+	
+}

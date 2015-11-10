@@ -1,0 +1,8 @@
+package comercio.notafiscal;
+
+public enum NFEstado {
+
+	emElaboracao,
+	validada;
+	
+}

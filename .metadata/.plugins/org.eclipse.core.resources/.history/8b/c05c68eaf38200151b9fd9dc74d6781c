@@ -1,0 +1,5 @@
+package comercio.paravenda;
+
+public interface Produto_Servico {
+
+}

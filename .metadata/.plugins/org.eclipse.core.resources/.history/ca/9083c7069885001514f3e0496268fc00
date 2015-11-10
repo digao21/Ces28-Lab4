@@ -1,0 +1,100 @@
+package bancodedados.hd;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import bancodedados.BancoDeDados;
+import comercio.paravenda.Produto;
+import comercio.paravenda.ProdutoServico;
+import comercio.paravenda.ProdutoServicoComposto;
+import comercio.paravenda.Servico;
+
+public class HDPS {
+
+	private BancoDeDados bd;
+	
+	public HDPS(){
+		bd = BancoDeDados.getBancoDeDados();
+	}
+	
+	private void readConstruirParede(){
+		String nome = "Construir Parede";
+		
+		ProdutoServico servPintarParede = bd.getProdutoServico("Servico Pintar Parede");
+		ProdutoServico prodPintarParede = bd.getProdutoServico("Produto Pintar Parede");
+		List<ProdutoServico> l = new ArrayList<>();
+		l.add(servPintarParede);
+		l.add(prodPintarParede);
+		
+		Map<String,String> mpI = new HashMap<>();
+		//ADICIONAR INFORMACOES
+		
+		ProdutoServicoComposto psc = new ProdutoServicoComposto(nome,mpI,l); 
+		
+		bd.setProdutoServico(psc);		
+	}
+	
+	private void  readProdutoConstruirParede(){
+		String nome = "Produto Construir Parede";
+		double precoPorUnidade = 90;
+		Map<String,String> mpI = new HashMap<>();
+		//ADICIONAR INFORMACOES
+		
+		Produto serv = new Produto(nome,mpI,precoPorUnidade);
+		
+		bd.setProdutoServico(serv);
+	}
+	
+	private void readServicoConstruiParede(){
+		String nome = "Servico Construir Parede";
+		double precoPorHora = 45;
+		Map<String,String> mpI = new HashMap<>();
+		//ADICIONAR INFORMACOES
+		
+		Servico serv = new Servico(nome,mpI,precoPorHora);
+		
+		bd.setProdutoServico(serv);
+	}
+	
+	private void readPintarParede(){
+		String nome = "Pintar Parede";
+		
+		ProdutoServico servPintarParede = bd.getProdutoServico("Servico Pintar Parede");
+		ProdutoServico prodPintarParede = bd.getProdutoServico("Produto Pintar Parede");
+		List<ProdutoServico> l = new ArrayList<>();
+		l.add(servPintarParede);
+		l.add(prodPintarParede);
+		
+		Map<String,String> mpI = new HashMap<>();
+		//ADICIONAR INFORMACOES
+		
+		ProdutoServicoComposto psc = new ProdutoServicoComposto(nome,mpI,l); 
+		
+		bd.setProdutoServico(psc);		
+	}
+	
+	private void readServicoPintarParede(){
+		String nome = "Servico Pintar Parede";
+		double precoPorHora = 50;
+		Map<String,String> mpI = new HashMap<>();
+		//ADICIONAR INFORMACOES
+		
+		Servico serv = new Servico(nome,mpI,precoPorHora);
+		
+		bd.setProdutoServico(serv);
+	}
+	
+	private void  readProdutoPintarParede(){
+		String nome = "Produto Pintar Parede";
+		double precoPorUnidade = 35;
+		Map<String,String> mpI = new HashMap<>();
+		//ADICIONAR INFORMACOES
+		
+		Produto serv = new Produto(nome,mpI,precoPorUnidade);
+		
+		bd.setProdutoServico(serv);
+	}
+	
+}
