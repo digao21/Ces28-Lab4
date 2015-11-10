@@ -59,11 +59,17 @@ public class NotaFiscal {
 	public List<ItemDeVenda> getItensDeVenda() {
 		return itensDeVenda;//.CLONE
 	}	
-	public void tributar(){		
+	public void tributar(){
+		List<CategoriaTributaria> l = new ArrayList<>();
 		
 		for(ItemDeVenda item : itensDeVenda){
-			item.calcularImposto(this);
-		}			
+			CategoriaTributaria cat = item.getCategoriaTributaria();
+			if(cat != null && !l.contains(cat))
+				l.add(cat);
+		}
+		
+		for(CategoriaTributaria cat : l)
+			cat.tributar(this);
 		
 	}
 

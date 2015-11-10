@@ -3,8 +3,7 @@ package comercio.paravenda;
 import java.util.Map;
 
 import bancodedados.BancoDeDados;
-import comercio.notafiscal.NotaFiscal;
-import tributacao.Imposto;
+import tributacao.CategoriaTributaria;
 import tributacao.Tributavel;
 
 public class ItemDeVenda implements Tributavel {
@@ -14,7 +13,7 @@ public class ItemDeVenda implements Tributavel {
 	private int quantidade;
 	private ProdutoServico ps;
 	private double desconto;
-	Imposto imposto = null;
+	CategoriaTributaria ct = null;
 	private Map<String,String> map;
 	
 	public ItemDeVenda(int qnt, String psNome, double desc, 
@@ -27,16 +26,15 @@ public class ItemDeVenda implements Tributavel {
 		
 		
 	}
-		
-
-	public void setImposto(Imposto im){
-		if(imposto != null)
-			throw new RuntimeException("Categoria tributaria e imutavel");
-		imposto = im;
-	}
 	
-	public void calcularImposto(NotaFiscal nf){
-		imposto.calcularImposto(this, nf);
+	public CategoriaTributaria getCategoriaTributaria(){
+		return ct;
+	}
+
+	public void setCategoriaTributaria(CategoriaTributaria ct){
+		if(this.ct != null)
+			throw new RuntimeException("Categoria tributaria e imutavel");
+		this.ct = ct;
 	}
 	
 	@Override

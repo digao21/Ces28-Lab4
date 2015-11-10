@@ -1,6 +1,6 @@
 package tributacao;
 
-import comercio.notafiscal.NotaFiscal;
+import java.util.List;
 
 public abstract class Imposto {
 	private String nome;
@@ -9,6 +9,6 @@ public abstract class Imposto {
 		return nome;
 	}
 	
-	public abstract double calcularImposto(Tributavel item , NotaFiscal fs);
+	public abstract double calcularImposto(Tributavel item , List<Tributavel> auxItens);
 	
 }

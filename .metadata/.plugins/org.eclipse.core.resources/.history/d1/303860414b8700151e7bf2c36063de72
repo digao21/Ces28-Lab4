@@ -1,9 +1,9 @@
 package comercio.paravenda;
 
+import java.util.List;
 import java.util.Map;
 
 import bancodedados.BancoDeDados;
-import comercio.notafiscal.NotaFiscal;
 import tributacao.Imposto;
 import tributacao.Tributavel;
 
@@ -35,8 +35,8 @@ public class ItemDeVenda implements Tributavel {
 		imposto = im;
 	}
 	
-	public void calcularImposto(NotaFiscal nf){
-		imposto.calcularImposto(this, nf);
+	public void calcularImposto(List<Tributavel> auxItens){
+		
 	}
 	
 	@Override

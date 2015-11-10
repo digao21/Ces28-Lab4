@@ -62,7 +62,7 @@ public class NotaFiscal {
 	public void tributar(){		
 		
 		for(ItemDeVenda item : itensDeVenda){
-			item.calcularImposto(this);
+			item.calcularImposto(itensDeVenda);
 		}			
 		
 	}
