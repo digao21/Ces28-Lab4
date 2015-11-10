@@ -37,8 +37,7 @@ public class FabricaItemDeVenda {
 	}
 	
 	public void criarItemDeVenda(NotaFiscal nf){
-		nf.adicionarItemDeVenda(
-				new ItemDeVenda(quantidade,psNome,desconto,informacao));
+		nf.adicionarItemDeVenda(new ItemDeVenda(quantidade,psNome,desconto,informacao));
 	}
 	
 }

@@ -42,5 +42,4 @@ public class NFBuilder {
 		bd.validarNotaFiscal(nf);		
 		return nf;
 	}
-	
 }
