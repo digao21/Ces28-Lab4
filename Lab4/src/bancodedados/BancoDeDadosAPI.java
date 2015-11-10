@@ -14,6 +14,6 @@ public class BancoDeDadosAPI {
 	}
 	
 	public void setProdutoServicoBDD(ProdutoServico ps){
-		BDD.setProdutoServico(ps);
+		//BDD.setProdutoServico(ps);
 	}
 }

@@ -1,0 +1,10 @@
+package comercio.paravenda;
+
+public class FabricaItemDeVenda {
+	private int quantidade;
+	private String psNome;
+	
+	public FabricaItemDeVenda(){
+		
+	}
+}

@@ -1,0 +1,61 @@
+package comercio.paravenda;
+
+import java.util.Map;
+
+import bancodedados.BancoDeDados;
+import comercio.notafiscal.NotaFiscal;
+import tributacao.Imposto;
+import tributacao.Tributavel;
+
+public class ItemDeVenda implements Tributavel {
+	
+	//IMPLEMENTAR
+	
+	private int quantidade;
+	private ProdutoServico ps;
+	private double desconto;
+	Imposto imposto = null;
+	private Map<String,String> map;
+	
+	public ItemDeVenda(int qnt, String psNome, double desc, 
+			Map<String,String> mp){
+		quantidade = qnt;
+		desconto = desc;
+		map = mp;
+		
+		BancoDeDados bd = BancoDeDados.getBancoDeDados();
+		
+		
+	}
+		
+
+	public void setImposto(Imposto im){
+		if(imposto != null)
+			throw new RuntimeException("Categoria tributaria e imutavel");
+		imposto = im;
+	}
+	
+	public void calcularImposto(NotaFiscal nf){
+		if(imposto != null)
+			imposto.calcularImposto(this, nf);
+	}
+	
+	@Override
+	public int getQuantidade() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getPreco() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String categoriaTributaria() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

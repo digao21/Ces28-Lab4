@@ -1,0 +1,18 @@
+package testes;
+
+import org.junit.Test;
+
+import comercio.notafiscal.NotaFiscal;
+
+public class Demos_1_A_5 {
+
+	@Test
+	public void requisito_1() {
+		
+		//	O codigo abaixo nao funciona se descomenta-lo o 
+		//programa nao compila, unica forma de criar NF e com o
+		//construtor
+		//NotaFiscal nf = new NotaFiscal();
+	}
+
+}

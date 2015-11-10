@@ -1,0 +1,22 @@
+package comercio.paravenda;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class FabricaItemDeVenda {
+	private int quantidade;
+	private String psNome = null;
+	private double desconto;
+	private Map<String,String> informacao = new HashMap<>();
+	
+	public FabricaItemDeVenda definirQuantidade(int quantidade){
+		this.quantidade = quantidade;
+		return this;
+	}
+	
+	public FabricaItemDeVenda definirQuantidade(int quantidade){
+		this.quantidade = quantidade;
+		return this;
+	}
+	
+}

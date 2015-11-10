@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import comercio.paravenda.ItemDeVenda;
-import tributacao.CategoriaTributaria;
 
 public class NotaFiscal {
 	
@@ -16,11 +15,7 @@ public class NotaFiscal {
 	private List<ItemDeVenda> itensDeVenda;	
 	private Map<String,Double> logImposto; 
 	private double totalImposto;
-	private Map<String, String> informacoes;
-	//private String condicoesEntrega;
-	//private Date dataDeEntrega;
-	//private DadosCliente dadosCliente;
-	//private String dadosSubmissao;
+	private Map<String, String> informacoes;	
 	
 	NotaFiscal(){
 		estado = NFEstado.emElaboracao;
@@ -33,17 +28,27 @@ public class NotaFiscal {
 	
 	//SETTERS
 	
-	public void setEstadoValidada(){
+	public void setEstadoValidada(int id){
+		testarImutabilidade();
+		this.id = id;
 		estado = NFEstado.validada;
 	}
-	void adicionarItemDeVenda(ItemDeVenda item){
+	public void adicionarItemDeVenda(ItemDeVenda item){
+		testarImutabilidade();		
 		valor += item.getPreco();
 		itensDeVenda.add(item);
 	}
-	public void setId(long id) {
+		
+	public void adicionarInformacao(String tipoInformacao, String informacao){
 		testarImutabilidade();
-		this.id = id;
-	}	
+		this.informacoes.put(tipoInformacao,informacao);
+	}
+	
+	public void registrarImposto(String impostoNome, double valor){
+		testarImutabilidade();
+		logImposto.put(impostoNome, valor);
+		totalImposto += valor;
+	}
 		
 	//GETTERS	
 	
@@ -59,12 +64,17 @@ public class NotaFiscal {
 	public List<ItemDeVenda> getItensDeVenda() {
 		return itensDeVenda;//.CLONE
 	}	
-	public void tributar(){		
+	public void tributar(){				
+		for(ItemDeVenda item : itensDeVenda)
+			item.calcularImposto(this);			
+	}
+	public String getInformacao(String tipoInformacao){
+		String answ = informacoes.get(tipoInformacao);
 		
-		for(ItemDeVenda item : itensDeVenda){
-			item.calcularImposto(this);
-		}			
+		if(answ == null)
+			throw new RuntimeException("Nao possuo tal informacao");
 		
+		return answ;
 	}
 
 	//LOGIC

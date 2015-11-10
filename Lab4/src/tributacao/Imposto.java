@@ -11,4 +11,8 @@ public abstract class Imposto {
 	
 	public abstract double calcularImposto(Tributavel item , NotaFiscal fs);
 	
+	protected void registrar(double valor, NotaFiscal fs){
+		fs.registrarImposto(nome, valor);
+	}
+	
 }
