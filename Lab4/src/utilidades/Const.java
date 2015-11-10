@@ -2,6 +2,10 @@ package utilidades;
 
 public abstract class Const {
 	
+	public static final String DATA_DE_ENTREGA = "Data de Entrega";
+	public static final String CLIENTE = "Cliente";
+	public static final String FORNECEDOR = "Fornecedor";
+	
 	public static final String PS_SHOW_DE_ROCK = "PS Show De Rock";
 	public static final String S_CONTRATAR_BANDA = "S Contratar Banda";
 	public static final String P_ALUGAR_INSTRUMENTO = "P Alugar Instrumentos";

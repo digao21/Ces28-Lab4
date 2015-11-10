@@ -7,7 +7,7 @@
 <fullyQualifiedTypeName name="comercio.notafiscal.NotaFiscal"/>
 <fullyQualifiedTypeName name="comercio.paravenda.Produto_Servico"/>
 <fullyQualifiedTypeName name="util.Const"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="comercio.paravenda.FabricaItemDeVenda"/>
 <fullyQualifiedTypeName name="bancodedados.BancoDeDados"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

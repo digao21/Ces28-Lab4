@@ -10,6 +10,7 @@ import comercio.paravenda.Produto;
 import comercio.paravenda.ProdutoServico;
 import comercio.paravenda.ProdutoServicoComposto;
 import comercio.paravenda.Servico;
+import tributacao.ImpostoA;
 import utilidades.Const;
 
 public class HDPS {
@@ -44,7 +45,7 @@ public class HDPS {
 		
 		ProdutoServicoComposto psc = new ProdutoServicoComposto(nome,mpI,l); 
 		
-		bd.setProdutoServico(psc);
+		bd.setProdutoServico(psc, new ImpostoA());
 	}
 	
 	private void readServicoContratarBanda(){
@@ -55,7 +56,7 @@ public class HDPS {
 		
 		Servico serv = new Servico(nome,mpI,precoPorHora);
 		
-		bd.setProdutoServico(serv);
+		bd.setProdutoServico(serv, new ImpostoA());
 	}
 	
 	private void  readProdutoAlugarEstrutura(){
@@ -66,7 +67,7 @@ public class HDPS {
 		
 		Produto serv = new Produto(nome,mpI,precoPorUnidade);
 		
-		bd.setProdutoServico(serv);
+		bd.setProdutoServico(serv, new ImpostoA());
 	}
 	
 	private void  readProdutoAlugarInstrumentos(){
@@ -77,7 +78,7 @@ public class HDPS {
 		
 		Produto serv = new Produto(nome,mpI,precoPorUnidade);
 		
-		bd.setProdutoServico(serv);
+		bd.setProdutoServico(serv, new ImpostoA());
 	}	
 	
 	//CONSTUIR E PINTAR PAREDE
@@ -105,7 +106,7 @@ public class HDPS {
 		
 		ProdutoServicoComposto psc = new ProdutoServicoComposto(nome,mpI,l); 
 		
-		bd.setProdutoServico(psc);		
+		bd.setProdutoServico(psc, new ImpostoA());		
 	}
 	
 	private void  readProdutoConstruirParede(){
@@ -116,7 +117,7 @@ public class HDPS {
 		
 		Produto serv = new Produto(nome,mpI,precoPorUnidade);
 		
-		bd.setProdutoServico(serv);
+		bd.setProdutoServico(serv, new ImpostoA());
 	}
 	
 	private void readServicoConstruirParede(){
@@ -127,7 +128,7 @@ public class HDPS {
 		
 		Servico serv = new Servico(nome,mpI,precoPorHora);
 		
-		bd.setProdutoServico(serv);
+		bd.setProdutoServico(serv, new ImpostoA());
 	}
 	
 	private void readPintarParede(){
@@ -146,7 +147,7 @@ public class HDPS {
 		
 		ProdutoServicoComposto psc = new ProdutoServicoComposto(nome,mpI,l); 
 		
-		bd.setProdutoServico(psc);		
+		bd.setProdutoServico(psc, new ImpostoA());		
 	}
 	
 	private void readServicoPintarParede(){
@@ -157,7 +158,7 @@ public class HDPS {
 		
 		Servico serv = new Servico(nome,mpI,precoPorHora);
 		
-		bd.setProdutoServico(serv);
+		bd.setProdutoServico(serv, new ImpostoA());
 	}
 	
 	private void  readProdutoPintarParede(){
@@ -168,7 +169,7 @@ public class HDPS {
 		
 		Produto serv = new Produto(nome,mpI,precoPorUnidade);
 		
-		bd.setProdutoServico(serv);
+		bd.setProdutoServico(serv, new ImpostoA());
 	}
 	
 }

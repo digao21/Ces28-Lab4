@@ -5,8 +5,9 @@ import java.util.Map;
 import bancodedados.BancoDeDados;
 import comercio.paravenda.FabricaItemDeVenda;
 
-public class NFBuilder {
-
+//BUILDER COM INTRFACE FLUENTE
+public class NFBuilder {	
+	
 	NotaFiscal nf;	
 	
 	public NFBuilder(){
@@ -31,11 +32,14 @@ public class NFBuilder {
 		return this;
 	}
 	
+	public NFBuilder adicionarInformacao(String tipoInformacao, String informacao){
+		nf.adicionarInformacao(tipoInformacao, informacao);
+		return this;
+	}
+	
 	public NotaFiscal criarNotaFiscal(){
-		BancoDeDados bd = BancoDeDados.getBancoDeDados();
-		
-		
-		
+		BancoDeDados bd = BancoDeDados.getBancoDeDados();		
+		bd.validarNotaFiscal(nf);		
 		return nf;
 	}
 	

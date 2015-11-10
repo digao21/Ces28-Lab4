@@ -15,11 +15,7 @@ public class NotaFiscal {
 	private List<ItemDeVenda> itensDeVenda;	
 	private Map<String,Double> logImposto; 
 	private double totalImposto;
-	private Map<String, String> informacoes;
-	//private String condicoesEntrega;
-	//private Date dataDeEntrega;
-	//private DadosCliente dadosCliente;
-	//private String dadosSubmissao;
+	private Map<String, String> informacoes;	
 	
 	NotaFiscal(){
 		estado = NFEstado.emElaboracao;
@@ -38,11 +34,16 @@ public class NotaFiscal {
 		estado = NFEstado.validada;
 	}
 	public void adicionarItemDeVenda(ItemDeVenda item){
-		testarImutabilidade();
+		testarImutabilidade();		
 		valor += item.getPreco();
 		itensDeVenda.add(item);
 	}
 		
+	public void adicionarInformacao(String tipoInformacao, String informacao){
+		testarImutabilidade();
+		this.informacoes.put(tipoInformacao,informacao);
+	}
+	
 	public void registrarImposto(String impostoNome, double valor){
 		testarImutabilidade();
 		logImposto.put(impostoNome, valor);
@@ -66,6 +67,14 @@ public class NotaFiscal {
 	public void tributar(){				
 		for(ItemDeVenda item : itensDeVenda)
 			item.calcularImposto(this);			
+	}
+	public String getInformacao(String tipoInformacao){
+		String answ = informacoes.get(tipoInformacao);
+		
+		if(answ == null)
+			throw new RuntimeException("Nao possuo tal informacao");
+		
+		return answ;
 	}
 
 	//LOGIC

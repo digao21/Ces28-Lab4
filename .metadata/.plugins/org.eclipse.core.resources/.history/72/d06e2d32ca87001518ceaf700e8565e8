@@ -1,0 +1,22 @@
+package testes;
+
+import org.junit.Test;
+
+import comercio.notafiscal.NFBuilder;
+
+public class Demos_1_A_5 {
+
+	@Test
+	public void requisito_1() {
+		
+		//	O codigo abaixo nao funciona se descomenta-lo o 
+		//programa nao compila. A unica forma de criar NF e com o
+		//construtor
+		//NotaFiscal nf = new NotaFiscal();
+		
+		//BUILDER COM INTERFACE FLUENTE
+		NFBuilder nfb = new NFBuilder();
+		
+	}
+
+}
