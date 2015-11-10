@@ -9,10 +9,9 @@ import tributacao.Tributavel;
 
 public class ItemDeVenda implements Tributavel {
 	
-	//IMPLEMENTAR
-	
+	//IMPLEMENTAR	
 	private int quantidade;
-	private ProdutoServico ps;
+	private ProdutoServico ps = null;
 	private double desconto;
 	Imposto imposto = null;
 	private Map<String,String> map;
@@ -24,19 +23,25 @@ public class ItemDeVenda implements Tributavel {
 		map = mp;
 		
 		BancoDeDados bd = BancoDeDados.getBancoDeDados();
-		
-		
+				
 	}
 		
 
 	public void setImposto(Imposto im){
 		if(imposto != null)
-			throw new RuntimeException("Categoria tributaria e imutavel");
+			throw new RuntimeException("Imposto e imutavel");
 		imposto = im;
 	}
 	
+	public void setProdutoServico(ProdutoServico ps){
+		if(this.ps != null)
+			throw new RuntimeException("ProdutoServico e imutavel");
+		this.ps = ps;
+	}
+	
 	public void calcularImposto(NotaFiscal nf){
-		imposto.calcularImposto(this, nf);
+		if(imposto != null)
+			imposto.calcularImposto(this, nf);
 	}
 	
 	@Override

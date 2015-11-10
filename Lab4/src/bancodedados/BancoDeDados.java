@@ -3,13 +3,18 @@ package bancodedados;
 import java.util.HashMap;
 import java.util.Map;
 
+import comercio.notafiscal.NFEstado;
+import comercio.notafiscal.NotaFiscal;
+import comercio.paravenda.ItemDeVenda;
 import comercio.paravenda.ProdutoServico;
+import tributacao.Imposto;
 
 public class BancoDeDados {
 	
 	private static BancoDeDados db = new BancoDeDados();
 		
 	private Map<String,ProdutoServico> mapPS;
+	private Map<String,Imposto> mapPSImposto;
 	
 	public static BancoDeDados getBancoDeDados(){
 		return db;		
@@ -30,11 +35,30 @@ public class BancoDeDados {
 		return psAnsw;
 	}
 	
+	public void adicionProdutoServicoAoItemDeVenda(ItemDeVenda iv, String psNome){
+		ProdutoServico ps = mapPS.get(psNome);
+		Imposto imposto = mapPSImposto.get(psNome);
+		
+		if(ps == null || imposto == null)
+			throw new RuntimeException("ProdutoServico ou Imposto null");
+		
+		iv.setProdutoServico(ps);
+		iv.setImposto(imposto);
+	}
+	
 	public void setProdutoServico(ProdutoServico ps){
 		if(mapPS.containsKey(ps.getNome()))
 			throw new RuntimeException("Produto/Servico ja existente. "
 					+ "Proibido repeticao");
 		mapPS.put(ps.getNome(), ps);
+	}
+	
+	public void validarNotaFiscal(NotaFiscal nf){
+		if(nf.getEstado().equals(NFEstado.validada))
+			throw new RuntimeException("Nao pode validar nf validada");
+		
+		//CONTINUAR%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
 	}
 	
 	private void readHD(){

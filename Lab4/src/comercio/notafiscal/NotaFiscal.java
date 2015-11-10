@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import comercio.paravenda.ItemDeVenda;
-import tributacao.CategoriaTributaria;
 
 public class NotaFiscal {
 	
@@ -33,17 +32,22 @@ public class NotaFiscal {
 	
 	//SETTERS
 	
-	public void setEstadoValidada(){
+	public void setEstadoValidada(int id){
+		testarImutabilidade();
+		this.id = id;
 		estado = NFEstado.validada;
 	}
-	void adicionarItemDeVenda(ItemDeVenda item){
+	public void adicionarItemDeVenda(ItemDeVenda item){
+		testarImutabilidade();
 		valor += item.getPreco();
 		itensDeVenda.add(item);
 	}
-	public void setId(long id) {
+		
+	public void registrarImposto(String impostoNome, double valor){
 		testarImutabilidade();
-		this.id = id;
-	}	
+		logImposto.put(impostoNome, valor);
+		totalImposto += valor;
+	}
 		
 	//GETTERS	
 	
@@ -59,12 +63,9 @@ public class NotaFiscal {
 	public List<ItemDeVenda> getItensDeVenda() {
 		return itensDeVenda;//.CLONE
 	}	
-	public void tributar(){		
-		
-		for(ItemDeVenda item : itensDeVenda){
-			item.calcularImposto(this);
-		}			
-		
+	public void tributar(){				
+		for(ItemDeVenda item : itensDeVenda)
+			item.calcularImposto(this);			
 	}
 
 	//LOGIC

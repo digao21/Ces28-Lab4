@@ -1,0 +1,12 @@
+package comercio.paravenda;
+
+public class FabricaItemDeVenda {
+	private int quantidade;
+	private String psNome;
+	private double desconto;
+	private Pap<String,String> informacao = new hashMap<>();
+	
+	public FabricaItemDeVenda(){
+		
+	}
+}

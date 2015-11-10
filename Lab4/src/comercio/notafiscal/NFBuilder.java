@@ -1,6 +1,9 @@
 package comercio.notafiscal;
 
-import comercio.paravenda.ItemDeVenda;
+import java.util.Map;
+
+import bancodedados.BancoDeDados;
+import comercio.paravenda.FabricaItemDeVenda;
 
 public class NFBuilder {
 
@@ -10,14 +13,30 @@ public class NFBuilder {
 		nf = new NotaFiscal();		
 	}
 	
-	public NFBuilder adicionarItemDeVenda(String nomeDoItem){
-		nf.adicionarItemDeVenda(item);
+	public NFBuilder adicionarItemDeVenda(int qnt, String psNome, double desc, 
+			Map<String,String> mp){
+		
+		new FabricaItemDeVenda()
+			.definirQuantidade(qnt)
+			.definirNomeDoProdutoServico(psNome)
+			.adicionarDesconto(desc)
+			.adicionarInformacao(mp)
+			.criarItemDeVenda(nf);
+		
 		return this;
 	}
 	
-	public NFBuilder informarCondicoesDeEntrega(String condicoes){		
-		nf.setCondicoesDeEntrega(condicoes);
+	public NFBuilder adicionarItemDeVenda(FabricaItemDeVenda fabrica){		
+		fabrica.criarItemDeVenda(nf);		
 		return this;
+	}
+	
+	public NotaFiscal criarNotaFiscal(){
+		BancoDeDados bd = BancoDeDados.getBancoDeDados();
+		
+		
+		
+		return nf;
 	}
 	
 }

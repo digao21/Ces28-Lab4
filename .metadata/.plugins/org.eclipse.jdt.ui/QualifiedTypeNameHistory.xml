@@ -5,8 +5,9 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="comercio.notafiscal.DadosCliente"/>
 <fullyQualifiedTypeName name="comercio.notafiscal.NotaFiscal"/>
-<fullyQualifiedTypeName name="bancodedados.BancoDeDados"/>
 <fullyQualifiedTypeName name="comercio.paravenda.Produto_Servico"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="util.Const"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="comercio.paravenda.FabricaItemDeVenda"/>
+<fullyQualifiedTypeName name="bancodedados.BancoDeDados"/>
 </qualifiedTypeNameHistroy>
